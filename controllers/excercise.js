@@ -1,5 +1,5 @@
 const express = require('express');
-const users = require('../models/users')
+const users = require('../models/friends')
 const app = express.Router()
 
 app.get('/', (req, res) => res.send(users))
