@@ -3,7 +3,7 @@
         <a  href="/">
         <b>
             <img alt="Vue logo" src="../assets/logo.png" style="height: 18px;">
-            What do you meme
+           Fitness App
         </b>
         </a>
     </h1>

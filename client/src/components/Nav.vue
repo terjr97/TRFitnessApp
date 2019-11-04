@@ -16,14 +16,19 @@
     <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active' : isOpen }">
         <div class="navbar-start">
 
-        <router-link exact-active-class="active" class="navbar-item" to="/about">
-            <i class="fab fa-vuejs fa-pull-left"></i>
-            About
+        <router-link exact-active-class="active" class="navbar-item" to="/friends">
+            <i class="fas fa-hiking fa-pull-left"></i>
+              Friends
         </router-link>
 
-        <router-link exact-active-class="active" class="navbar-item" to="/game">
-            <i class="fas fa-ghost fa-pull-left"></i>
-            Game
+        <router-link exact-active-class="active" class="navbar-item" to="/excercises">
+            <i class="fas fa-dumbbell fa-pull-left"></i>
+              Excercises
+        </router-link>
+
+        <router-link exact-active-class="active" class="navbar-item" to="/calories">
+           <i class="fas fa-carrot fa-pull-left"></i>
+              Calories
         </router-link>
 
         <div class="navbar-item has-dropdown is-hoverable">
@@ -36,9 +41,6 @@
                     <i class="fab fa-vuejs fa-pull-left"></i>
                     About
                 </router-link>
-            <a class="navbar-item">
-                Jobs
-            </a>
             <a class="navbar-item">
                 Contact
             </a>

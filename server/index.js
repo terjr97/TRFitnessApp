@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const userController = require('./controllers/Users');
-const gameController = require('./controllers/Game');
+const FriendController = require('./controllers/Friends')
 
 const app = express();
 const port = process.env.PORT ||  3000;
@@ -11,6 +11,6 @@ app
     .get('/sql', (req, res)=> res.send(process.env.MYSQLCONNSTR_localdb))
     .use('/static', express.static( path.join( __dirname , '../NoFramework' ) ) )
     .use('/users', userController )
-    .use('/game', gameController );
+    .use('/friends', FriendController)
 
 app.listen(port, () => console.log(`Running on http://localhost:${port}`));

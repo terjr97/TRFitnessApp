@@ -1,13 +1,19 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Game from '../views/Game';
+import Calories from '../views/Calories';
+import Friends from '../views/Friends';
+import Excercise from '../views/Excercises'
+
 
 Vue.use(VueRouter);
 
 const routes = [
   { path: '/', name: 'home', component: Home },
-  { path: '/game', name: 'game', component: Game },
+  { path: '/calories', name: 'calories', component: Calories },
+  { path: '/friends', name: 'friends', component: Friends },
+  { path: '/excercises', name: 'excercises', component: Excercise },
+  
   {
     path: '/about',
     name: 'about',
