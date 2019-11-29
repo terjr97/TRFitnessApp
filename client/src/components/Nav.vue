@@ -26,42 +26,23 @@
               Calories
         </router-link>
 
-        <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" active-class="kind-of-active">
-            More
-            </a>
+        <router-link exact-active-class="active" class="navbar-item" to="/user">
+           <i class="fas fa-carrot fa-pull-left"></i>
+              User
+        </router-link>
 
-            <div class="navbar-dropdown">
-            <a class="navbar-item">
-                <router-link class="navbar-item" to="/report" exact-active-class="active">
-                    <i class="fab fa-vuejs fa-pull-left"></i>
-                    Report an Issue
-                </router-link>
-            </a>
-            <a class="navbar-item">
-                <router-link class="navbar-item" to="/user" exact-active-class="active">
-                    <i class="fab fa-vuejs fa-pull-left"></i>
-                    User info
-                </router-link>
-            </a>
+        <router-link exact-active-class="active" class="navbar-item" to="/report">
+           <i class="fas fa-carrot fa-pull-left"></i>
+              Report an Issue
+        </router-link>
+
             </div>
-        </div>
         </div>
 
         <div class="navbar-end">
-        <div class="navbar-item">
-            <div class="buttons">
-            <a class="button is-primary">
-                <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-                Log in
-            </a>
-            </div>
         </div>
-        </div>
-    </div>
     </nav>
+
 </template>
 
 <script>

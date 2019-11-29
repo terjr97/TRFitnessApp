@@ -1,4 +1,5 @@
 <template>
+<div>
 <div class="columns" style="background-color:LightGreen;">
   <div class="column">
 <div class="select is-rounded">
@@ -47,7 +48,22 @@
 </div>
   </div>
     <div class="column">
-      <a class="button is-link is-hovered">calculate</a>
+      
     </div>
   </div>
+  <li v-for="(p, i) in game.Players " :key="i" 
+                    class="panel-block">
+                    <span class="panel-icon">
+                    </span>
+                    {{p.name}}
+                </li>
+  </div>
 </template>
+
+<script>
+import { Game_Server } from "../models/Game";
+
+export default {
+  
+}
+</script>
