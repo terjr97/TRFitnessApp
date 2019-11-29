@@ -1,9 +1,9 @@
 <template>
-    <h1 class="is-size-3" style="background-color:black;">
+    <h1 class="is-size-3">
         <a  href="/">
         <b>
             <img alt="Vue logo" src="../assets/logo.png" style="height: 18px;">
-           Fitness App
+            What do you meme
         </b>
         </a>
     </h1>
