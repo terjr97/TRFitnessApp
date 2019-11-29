@@ -16,11 +16,6 @@
     <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active' : isOpen }">
         <div class="navbar-start">
 
-        <router-link exact-active-class="active" class="navbar-item" to="/friends">
-            <i class="fas fa-hiking fa-pull-left"></i>
-              Friends
-        </router-link>
-
         <router-link exact-active-class="active" class="navbar-item" to="/excercises">
             <i class="fas fa-dumbbell fa-pull-left"></i>
               Excercises
@@ -37,16 +32,17 @@
             </a>
 
             <div class="navbar-dropdown">
-                <router-link class="navbar-item" to="/about" exact-active-class="active">
+            <a class="navbar-item">
+                <router-link class="navbar-item" to="/report" exact-active-class="active">
                     <i class="fab fa-vuejs fa-pull-left"></i>
-                    About
+                    Report an Issue
                 </router-link>
-            <a class="navbar-item">
-                Contact
             </a>
-            <hr class="navbar-divider">
             <a class="navbar-item">
-                Report an issue
+                <router-link class="navbar-item" to="/user" exact-active-class="active">
+                    <i class="fab fa-vuejs fa-pull-left"></i>
+                    User info
+                </router-link>
             </a>
             </div>
         </div>
@@ -80,11 +76,11 @@ export default {
 
 <style>
     .active {
-        background-color: aliceblue;
+        background-color: rgb(224, 188, 188);
         font-weight: bold;
     }
     .kind-of-active {
-        background-color: rgb(244, 248, 252);
+        background-color: rgb(224, 188, 188);
         font-weight: 100;
     }
 </style>

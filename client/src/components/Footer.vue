@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer">
+    <footer class="footer" style="background-color:powderblue;">
         <div class="content has-text-centered">
             <p>
             <strong>TR Fitness app</strong> by Thomas Rabe.
@@ -8,3 +8,4 @@
         </div>
     </footer>
 </template>
+<style>
