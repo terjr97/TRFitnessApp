@@ -24,7 +24,9 @@
                 <p class="panel-heading">
                     My Hand
                 </p>
-                <li v-for="(c, i) in My_Captions " :key="i" class="panel-block is-active">
+                <li v-for="(c, i) in My_Captions " :key="i" 
+                    class="panel-block is-active"
+                    @click="submitCaption(c ,i)">
                     {{c}}
                 </li>
             </ul>
@@ -38,6 +40,17 @@
                     Flip First Picture
                 </div>
             </div>
+
+            <ul class="panel">
+                <p class="panel-heading">
+                    Captions In Play
+                </p>
+                <li v-for="(c, i) in game.Captions_In_Play " :key="i" class="panel-block is-active">
+                    
+                    {{c}}
+                </li>
+            </ul>
+
         </div>
     </div>
 
@@ -45,21 +58,26 @@
 </template>
 
 <script>
-import { Game_Client, Game_Server, My_Captions } from "../models/Game";
+import { Game_Server } from "../models/Game";
 
 
 export default {
     data: ()=> ({
-        game: Game_Client,
-        My_Captions
+        game: {},
+        My_Captions: []
     }),
-    created(){
-        this.My_Captions = Game_Server.Get_Hand();
+    async created(){
+        this.My_Captions = await Game_Server.Get_Hand();
+        setInterval( async ()=> this.game = await Game_Server.Get_State(), 2000 )
+        
     },
     methods: {
         pictureClicked(){
-            this.game.Picture_In_Play = Game_Server.Get_Next_Picture();
-            this.game.Dealer ++;
+            Game_Server.Flip_Picture();
+        },
+        async submitCaption(caption, i){
+            const response = await Game_Server.Submit_Caption(caption);
+            this.My_Captions.splice(i, 1);
         }
     }
 }
