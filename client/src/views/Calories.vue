@@ -11,5 +11,23 @@
   </div>
 </div>
 <button class="button is-info is-medium is-fullwidth">Click Here to add Calories</button>
-    </div>
+<div>
+<li v-for="(c, i) in UserProfile.Calories " :key="i" class="panel-block">
+                    
+                    {{c}}
+                </li>
+</div>
+</div>
 </template>
+
+<script>
+import { UserProfile } from "../models/User";
+
+export default {
+   data: ()=> ({
+        UserProfile: {},
+    }),
+}
+
+
+</script>>

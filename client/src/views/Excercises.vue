@@ -49,5 +49,23 @@
   </div>
   </div>
       <button class="button is-info is-medium is-fullwidth">Click Here to add Excercises</button>
+      <div>
+      <li v-for="(c, i) in UserProfile.Excercises " :key="i" class="panel-block">
+                    
+                    {{c}}
+                </li>
+  </div>
   </div>
 </template>
+
+<script>
+import { UserProfile } from "../models/User";
+
+export default {
+   data: ()=> ({
+        UserProfile: {},
+    }),
+}
+
+
+</script>>

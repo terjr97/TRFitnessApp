@@ -16,6 +16,7 @@
   </div>
 </div>
 <button class="button is-info is-medium is-fullwidth">Set User Data</button>
+
  <div class="panel">
                 <p class="panel-heading">
                     Daily Calories
@@ -23,8 +24,20 @@
             </div>
  <div class="panel">
                 <p class="panel-heading">
-                    Remaining Calories
+                    Remaining Calories  
                 </p>
+                
             </div>
     </div>
 </template>
+
+<script>
+import { UserProfile } from "../models/User";
+
+export default {
+calories(){
+  UserProfile.caloriesLeft = (UserProfile.weight * 6) + (UserProfile.calories * 13) - (7 * UserProfile.age);
+}
+}
+
+</script>
