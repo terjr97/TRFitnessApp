@@ -2,17 +2,17 @@
     <div>
         <div class="field">
   <div class="control">
-    <input class="input is-primary" type="text" placeholder="Enter Age in Years">
+    <input v-model="age" class="input is-primary" type="text" placeholder="Enter Age in Years">
   </div>
 </div>
 <div class="field">
   <div class="control">
-    <input class="input is-warning" type="text" placeholder="Enter Height in Inches">
+    <input v-model="height" class="input is-warning" type="text" placeholder="Enter Height in Inches">
   </div>
 </div>
 <div class="field">
   <div class="control">
-    <input class="input is-danger" type="text" placeholder="Enter Weight in Pounds">
+    <input v-model="weight" class="input is-danger" type="text" placeholder="Enter Weight in Pounds">
   </div>
 </div>
 <button class="button is-info is-medium is-fullwidth">Set User Data</button>
@@ -34,10 +34,8 @@
 <script>
 import { UserProfile } from "../models/User";
 
-export default {
-calories(){
-  UserProfile.caloriesLeft = (UserProfile.weight * 6) + (UserProfile.calories * 13) - (7 * UserProfile.age);
-}
-}
 
+export default {
+
+}
 </script>
