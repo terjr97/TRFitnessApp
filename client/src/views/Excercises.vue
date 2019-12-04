@@ -61,6 +61,10 @@
 <script>
 import { UserProfile } from "../models/User";
 
+function cal(){
+UserProfile.addexcercise(excercise,time,intensity);
+}
+
 export default {
    data: ()=> ({
         UserProfile: {},

@@ -15,18 +15,19 @@
     <input v-model="weight" class="input is-danger" type="text" placeholder="Enter Weight in Pounds">
   </div>
 </div>
-<button class="button is-info is-medium is-fullwidth">Set User Data</button>
+<button class="button is-info is-medium is-fullwidth" @click="my()">Set User Data</button>
 
  <div class="panel">
                 <p class="panel-heading">
                     Daily Calories
                 </p>
+                <p id="cal"></p>
             </div>
  <div class="panel">
                 <p class="panel-heading">
                     Remaining Calories  
                 </p>
-                
+                <p id ="rem"></p>
             </div>
     </div>
 </template>
@@ -34,8 +35,14 @@
 <script>
 import { UserProfile } from "../models/User";
 
+function my(){
+  UserProfile.submitData(weight, height);
+  document.getElementById("cal").innerHTML = UserProfile.calories;}
 
 export default {
-
+data: ()=> ({
+        UserProfile: {},
+    }),
 }
+
 </script>

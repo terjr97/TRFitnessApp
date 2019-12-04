@@ -12,7 +12,7 @@
 </div>
 <button class="button is-info is-medium is-fullwidth">Click Here to add Calories</button>
 <div>
-<li v-for="(c, i) in UserProfile.Calories " :key="i" class="panel-block">
+<li v-for="(c, i) in UserProfile.foodCalories " :key="i" class="panel-block">
                     
                     {{c}}
                 </li>
@@ -22,6 +22,10 @@
 
 <script>
 import { UserProfile } from "../models/User.js";
+
+function cal(){
+UserProfile.addfood(name,calories);
+}
 
 export default {
    data: ()=> ({
