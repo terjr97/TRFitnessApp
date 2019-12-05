@@ -27,12 +27,12 @@
         </router-link>
 
         <router-link exact-active-class="active" class="navbar-item" to="/user">
-           <i class="fas fa-carrot fa-pull-left"></i>
+           <i class="fas fa-user fa-pull-left"></i>
               User
         </router-link>
 
         <router-link exact-active-class="active" class="navbar-item" to="/report">
-           <i class="fas fa-carrot fa-pull-left"></i>
+           <i class="fas fa-flag fa-pull-left"></i>
               Report an Issue
         </router-link>
 
