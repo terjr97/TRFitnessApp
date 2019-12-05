@@ -15,7 +15,7 @@
     <input v-model="weight" class="input is-danger" type="text" placeholder="Enter Weight in Pounds">
   </div>
 </div>
-<button class="button is-info is-medium is-fullwidth" @click="my()">Set User Data</button>
+<button id= but class="button is-info is-medium is-fullwidth" @click="my()">Set User Data</button>
 
  <div class="panel">
                 <p class="panel-heading">
