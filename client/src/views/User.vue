@@ -2,20 +2,20 @@
     <div>
         <div class="field">
   <div class="control">
-    <input v-model="age" class="input is-primary" type="text" placeholder="Enter Age in Years">
+    <input id="age" class="input is-primary" type="value" placeholder="Enter Age in Years">
   </div>
 </div>
 <div class="field">
   <div class="control">
-    <input v-model="height" class="input is-warning" type="text" placeholder="Enter Height in Inches">
+    <input id="height" class="input is-warning" type="value" placeholder="Enter Height in Inches">
   </div>
 </div>
 <div class="field">
   <div class="control">
-    <input v-model="weight" class="input is-danger" type="text" placeholder="Enter Weight in Pounds">
+    <input id="weight" class="input is-danger" type="value" placeholder="Enter Weight in Pounds">
   </div>
 </div>
-<button id= but class="button is-info is-medium is-fullwidth" @click="my()">Set User Data</button>
+<button class="button is-info is-medium is-fullwidth" @click="my()">Set User Data</button>
 
  <div class="panel">
                 <p class="panel-heading">
@@ -36,7 +36,7 @@
 import { UserProfile } from "../models/User";
 
 function my(){
-  UserProfile.submitData(weight, height);
+  UserProfile.submitData(document.getElementById("weight"), document.getElementById("height"));
   document.getElementById("cal").innerHTML = UserProfile.calories;}
 
 export default {
