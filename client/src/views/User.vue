@@ -2,17 +2,17 @@
     <div>
         <div class="field">
   <div class="control">
-    <input id="age" class="input is-primary" type="value" placeholder="Enter Age in Years">
+    <input v-model="age" class="input is-primary" type="value" placeholder="Enter Age in Years">
   </div>
 </div>
 <div class="field">
   <div class="control">
-    <input id="height" class="input is-warning" type="value" placeholder="Enter Height in Inches">
+    <input v-model="height" class="input is-warning" type="value" placeholder="Enter Height in Inches">
   </div>
 </div>
 <div class="field">
   <div class="control">
-    <input id="weight" class="input is-danger" type="value" placeholder="Enter Weight in Pounds">
+    <input v-model="weight" class="input is-danger" type="value" placeholder="Enter Weight in Pounds">
   </div>
 </div>
 <button class="button is-info is-medium is-fullwidth" @click="set()">Set User Data</button>
@@ -35,18 +35,17 @@
 <script>
 import { UserProfile } from "../models/User";
 
-function set(){
-  UserProfile.submitData(document.getElementById("weight"), document.getElementById("height"));
-  document.getElementById("cal").innerHTML = UserProfile.calories;}
-
-window.addEventListener(UserProfile, function(e) {
-  document.getElementById("rem").innerHTML = UserProfile.caloriesLeft;
-});
-
 export default {
-data: ()=> ({
-        UserProfile: {},
+   data: ()=> ({
+        UserProfile,
+        weight: "",
+        height: "",
+        age: ""
     }),
+    methods: {
+      set(){
+          UserProfile.submitData(weight,height);
+          document.getElementById("cal").innerHTML = UserProfile.calories;}
+    }
 }
-
 </script>

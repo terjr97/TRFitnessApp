@@ -4,7 +4,7 @@
   <div class="column">
 <div class="select is-rounded">
   <div class = "select is-danger">
-  <select id="excercise">
+  <select v-model="excercise">
     <option value = "0">Excercise Used  </option>
     <option value = "13">Running</option>
     <option value = "11">Walking</option>
@@ -20,7 +20,7 @@
   <div class="column">
 <div class="select is-rounded">
     <div class = "select is-info">
-  <select id="time">
+  <select v-model="time">
     <option value = "0">Duration of Excercise</option>
     <option value = "5">5 minutes</option>
     <option value = "10">10 minutes</option>
@@ -38,7 +38,7 @@
   <div class="column">
   <div class="select is-rounded">
       <div class = "select is-primary">
-  <select id="intensity">
+  <select v-model="intensity">
     <option value = "0">Intensity of Excercise</option>
     <option value = "1">Low  Intensity</option>
     <option value = "1.2">Mid  Intensity</option>
@@ -50,7 +50,7 @@
   </div>
       <button class="button is-info is-medium is-fullwidth" @click="exe()">Click Here to add Excercises</button>
       <div>
-      <li v-for="(c, i) in UserProfile.Excercises " :key="i" class="panel-block">
+      <li v-for="(c, i) in UserProfile.Excercise " :key="i" class="panel-block">
                     
                     {{c}}
                 </li>
@@ -61,15 +61,20 @@
 <script>
 import { UserProfile } from "../models/User";
 
-function exe(){
-UserProfile.addexcercise(document.getElementById("excercise"),document.getElementById("time"),document.getElementById("intensity"));
-}
-
 export default {
    data: ()=> ({
-        UserProfile: {},
+        UserProfile,
+        excercise: "",
+        time: "",
+        intensity: ""
     }),
+    methods: {
+      exe(){
+      UserProfile.addexcercise(excercise,time,intensity);
+      }
+    }
 }
+
 
 
 </script>>

@@ -2,12 +2,12 @@
     <div>
         <div class="field">
   <div class="control">
-    <input id="name" class="input is-primary" type="text" placeholder="Enter Name of Food">
+    <input v-model="name" class="input is-primary" type="text" placeholder="Enter Name of Food">
   </div>
 </div>
 <div class="field">
   <div class="control">
-    <input id="calories" class="input is-info" type="value" placeholder="Enter Calories of Food">
+    <input v-model="calories" class="input is-info" type="value" placeholder="Enter Calories of Food">
   </div>
 </div>
 <button class="button is-info is-medium is-fullwidth" @click="cal()">Click Here to add Calories</button>
@@ -22,14 +22,18 @@
 <script>
 import { UserProfile } from "../models/User.js";
 
-function cal(){
-UserProfile.addfood(document.getElementById("name"),document.getElementById("calories"));
-}
 
 export default {
    data: ()=> ({
-        UserProfile: {},
+        UserProfile,
+        name: "",
+        calories: ""
     }),
+    methods: {
+      cal(){
+      UserProfile.addfood(name,calories);
+      }
+    }
 }
 
 
